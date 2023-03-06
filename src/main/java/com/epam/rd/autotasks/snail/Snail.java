@@ -7,16 +7,16 @@ public class Snail
     public static void main(String[] args)
     {
         Scanner scan = new Scanner(System.in);
-        int up= scan.nextInt(), down = scan.nextInt(), height = scan.nextInt();
-        int grind = 0;
-        int steps = 0;
-        if (up > down || up >= height){
-            while (grind <= height){
-                if (grind + up < height) {
-                    grind += up - down;
-                    steps++;
+        int upFeetPerDay = scan.nextInt(), downFeetPerNight = scan.nextInt(), treeHeight = scan.nextInt();
+        int distanceTraveled = 0;
+        int countOfDays = 0;
+        if (upFeetPerDay > downFeetPerNight || upFeetPerDay >= treeHeight){
+            while (distanceTraveled <= treeHeight){
+                if (distanceTraveled + upFeetPerDay < treeHeight) {
+                    distanceTraveled += upFeetPerDay - downFeetPerNight;
+                    countOfDays++;
                 } else {
-                    System.out.println(++steps);
+                    System.out.println(++countOfDays);
                     break;
                 }
             }
